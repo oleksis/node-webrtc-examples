@@ -42,7 +42,9 @@ const connectionManagers = examples.reduce((connectionManagers, example) => {
   return connectionManagers.set(example, connectionManager);
 }, new Map());
 
-const server = app.listen(3000, () => {
+const port = 5000;
+const hostname = '0.0.0.0';
+const server = app.listen(port, hostname, () => {
   const address = server.address();
   console.log(`http://localhost:${address.port}\n`);
 
